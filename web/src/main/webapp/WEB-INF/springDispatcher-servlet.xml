@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:aop="http://www.springframework.org/schema/aop"  
+    xmlns:tx="http://www.springframework.org/schema/tx"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+           http://www.springframework.org/schema/beans/spring-beans-4.2.xsd  
+           http://www.springframework.org/schema/context  
+           http://www.springframework.org/schema/context/spring-context.xsd  
+           http://www.springframework.org/schema/aop  
+           http://www.springframework.org/schema/aop/spring-aop.xsd  
+           http://www.springframework.org/schema/tx   
+           http://www.springframework.org/schema/tx/spring-tx.xsd
+           http://www.springframework.org/schema/mvc 
+           http://www.springframework.org/schema/mvc/spring-mvc.xsd">  
+    <mvc:annotation-driven/>  
+    <context:component-scan base-package="com.zy.myeyes" />
+
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="favorParameter" value="false"/>
+        <property name="defaultContentType" value="application/xhtml+xml"/>
+        <property name="favorPathExtension" value="true"/>
+        <property name="ignoreUnknownPathExtensions" value="true"/>
+        <property name="ignoreAcceptHeader" value="true"/>
+        <property name="mediaTypes">
+            <map>
+                <entry key="json" value="application/json"/>
+                <entry key="xmlp" value="application/xml"/>
+                <entry key="jsonp" value="application/json"/>
+                <entry key="jspf" value="text/html"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="order" value="1"/>
+        <property name="contentNegotiationManager" ref="contentNegotiationManager"/>
+        <property name="viewResolvers">
+            <list>
+                <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                    <property name="contentType" value="text/html;charset=UTF-8"/>
+                    <property name="suffix" value=".jsp"/>
+                </bean>
+            </list>
+        </property>
+        <property name="defaultViews">
+            <list>
+                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+                <bean class="org.springframework.web.servlet.view.xml.MappingJackson2XmlView">
+                    <property name="modelKey" value="xmlModelKey"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+</beans>
