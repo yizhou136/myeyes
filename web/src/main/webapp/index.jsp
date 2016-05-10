@@ -2,6 +2,6 @@
     pageEncoding="UTF-8" isELIgnored="false"%>
 <html>
 <body>
-<h2>${msg} msg</h2>
+<h2>${msg} msg2</h2>
 </body>
 </html>

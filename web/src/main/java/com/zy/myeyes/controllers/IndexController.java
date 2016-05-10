@@ -12,10 +12,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
 
@@ -26,7 +23,7 @@ public class IndexController {
 
 	@RequestMapping(value={"/index", "/"}, method={RequestMethod.GET})
 	//@ResponseBody
-	public void index(Map map, ModelMap modelMap, Model model){
+	public void index(Map map, ModelMap modelMap, Model model, @RequestParam(defaultValue = "ahha default") String name){
 		logger.debug("xxxxxxxxxxxxxxxxxx processed by index 1234 afasdfasdfsadf xxxxxxxxxxxxxxxxxxxxx");
 		logger.debug("modelMap :"+modelMap+" requestMap:"+map);
 		
@@ -36,7 +33,7 @@ public class IndexController {
 
 		User user = new User();
 		user.setAge(11);
-		user.setUserName("zy");
+		user.setName("zy");
 		//return "redirect:hello";
 		/*Map<String,String> returnMap = new HashMap<String,String>();
 		returnMap.put("name", "zy");
@@ -51,6 +48,7 @@ public class IndexController {
 		//com.fasterxml.jackson.core
 		ObjectMapper objectMapper;
 		model.addAttribute("xmlModelKey", list);
+		model.addAttribute("name", name);
 	}
 	
 	@RequestMapping(value={"/hello"}, method={RequestMethod.GET})

@@ -1,9 +1,13 @@
 package com.zy.myeyes.beans;
 
+import javax.persistence.Id;
+
 public class User {
-	long uid;
-	String userName;
-	int  age;
+	@Id
+	private long uid;
+
+	private String name;
+	private int  age;
 
 
 	public long getUid() {
@@ -22,12 +26,18 @@ public class User {
 		this.age = age;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
-	
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("uid:").append(getUid()).append(" age:").append(getAge()).append(" username:").append(getName());
+		return sb.toString();
+	}
 }

@@ -69,7 +69,7 @@ public class LoginController {
 	@RequestMapping(value={"/login"}, method={RequestMethod.POST})
 	public String login(@Validated User user, BindingResult br, RedirectAttributes ra, ModelMap modelMap){
 		logger.debug("xxxxxxxxxxxxxxxxxx processed by login xxxxxxxxxxxxxxxxxxxxx");
-		logger.debug("user :"+user.getUserName());
+		logger.debug("user :"+user.getName());
 		
 		logger.debug("modelMap :"+modelMap);
 		ra.addFlashAttribute("user", user);		

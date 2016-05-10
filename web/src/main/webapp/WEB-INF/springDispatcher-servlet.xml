@@ -16,8 +16,12 @@
            http://www.springframework.org/schema/tx/spring-tx.xsd
            http://www.springframework.org/schema/mvc 
            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
     <context:property-placeholder location="classpath:jdbc.properties"/>
-    <mvc:annotation-driven/>  
+    <!--
+    <context:property-placeholder location="classpath:hsqldb_jdbc.properties"/>
+    -->
+    <mvc:annotation-driven content-negotiation-manager="contentNegotiationManager"/>
     <context:component-scan base-package="com.zy.myeyes" />
 
 
@@ -116,10 +120,13 @@
                 <entry key="xmlp" value="application/xml"/>
                 <entry key="jsonp" value="application/json"/>
                 <entry key="jspf" value="text/html"/>
+                <entry key="ftl" value="text/html"/>
             </map>
         </property>
     </bean>
 
+
+    <!--
     <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
         <property name="order" value="1"/>
         <property name="contentNegotiationManager" ref="contentNegotiationManager"/>
@@ -140,4 +147,22 @@
             </list>
         </property>
     </bean>
+    -->
+
+    <mvc:freemarker-configurer>
+        <mvc:template-loader-path location="WEB-INF/ftls"/>
+    </mvc:freemarker-configurer>
+
+    <mvc:view-resolvers>
+        <mvc:content-negotiation>
+            <mvc:default-views >
+                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+                <bean class="org.springframework.web.servlet.view.xml.MappingJackson2XmlView">
+                    <property name="modelKey" value="xmlModelKey"/>
+                </bean>
+            </mvc:default-views>
+        </mvc:content-negotiation>
+        <mvc:freemarker/>
+        <mvc:jsp/>
+    </mvc:view-resolvers>
 </beans>

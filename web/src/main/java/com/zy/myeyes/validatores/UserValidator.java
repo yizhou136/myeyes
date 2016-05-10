@@ -15,9 +15,9 @@ public class UserValidator implements Validator{
 
 	public void validate(Object target, Errors errors) {
 		User user = (User)target;
-		if (user.getUserName().length() < 8){
+		if (user.getName().length() < 8){
 			errors.rejectValue("userName", "valid.userNameLen", 
-					new Object[]{"minLength", 8}, "ÓÃ»§Ãû²»ÄÜÉÙÓÚ {0}Î»");
+					new Object[]{"minLength", 8}, "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ {0}Î»");
 		}
 	}
 	
