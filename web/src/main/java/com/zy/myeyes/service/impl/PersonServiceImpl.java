@@ -29,13 +29,21 @@ public class PersonServiceImpl implements PersonService{
         personDao.save(person);
         personDao.save(person);
         personDao.save(person);
+        personDao.save(person);
+        personDao.save(person);
         logger.debug("save person service id:"+person.getId());
 
         Pageable pageable = new PageRequest(0, 3);
         List<Person> list = personDao.findByName(person.getName(), pageable);
         logger.debug("findByName list:"+list.size());
 
-        Person personNew = personDao.findById(3);
-        logger.debug("findById person:"+personNew);
+        Person personNew = personDao.findById(person.getId());
+        logger.debug("findById person1:"+personNew);
+
+        personNew = personDao.findById(person.getId());
+        logger.debug("findById person2:"+personNew);
+
+        personNew = personDao.findById(person.getId());
+        logger.debug("findById person3:"+personNew);
     }
 }

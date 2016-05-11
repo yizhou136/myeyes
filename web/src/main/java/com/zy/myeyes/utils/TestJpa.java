@@ -9,6 +9,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import java.text.NumberFormat;
 import java.util.List;
 
 /**
@@ -57,8 +58,25 @@ public class TestJpa {
         entityManagerFactory.close();
     }
 
+    /**
+     * 计算上传进度
+     */
+    private static String calcuProgress(long uploadSize, long fileLength) {
+        double baifenbi = 0.00d;
+        String uploadProgess = "0";
+        baifenbi = (double) uploadSize / (double) fileLength;
+        NumberFormat nf = NumberFormat.getPercentInstance();
+        nf.setMinimumFractionDigits(2);
+        uploadProgess = nf.format(baifenbi);
+        uploadProgess = uploadProgess.equals("NaN") ? "0" : uploadProgess;
+        System.out.println("百分比:" + uploadSize + ":" + fileLength);
+        return uploadProgess.substring(0, uploadProgess.length() - 1);
+    }
+
     public static void main(String args[]){
         //createTable();
-        save();
+        //save();
+
+        System.out.println(calcuProgress(162988032, 162990509));
     }
 }

@@ -143,8 +143,9 @@
                 <entry key="hibernate.max_fetch_depth" value="2"/>
                 <entry key="hibernate.generate_statistics" value="true"/>
                 <entry key="hibernate.bytecode.use_reflection_optimizer" value="true"/>
-                <entry key="hibernate.cache.use_second_level_cache" value="false"/>
-                <entry key="hibernate.cache.use_query_cache" value="false"/>
+                <entry key="hibernate.cache.use_second_level_cache" value="true"/>
+                <entry key="hibernate.cache.use_query_cache" value="true"/>
+                <entry key="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.EhCacheRegionFactory"/>
             </map>
         </property>
     </bean>

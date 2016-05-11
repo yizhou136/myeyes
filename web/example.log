@@ -564,3 +564,75 @@ DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register end userName:zy
 DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - save product pid:2
 DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - get product by genericDao pid:1
 DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - get user by userDao uid:0
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - save person service id:1
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findByName list:1
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findById person:null
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register before save User to DB
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register after save User to DB
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register end userName:zy password:123456
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - save product pid:2
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - get product by genericDao pid:1
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - get user by userDao uid:0
+WARN main org.springframework.context.support.ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [testspring.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory
+WARN main org.springframework.context.support.ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [testspring.xml]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.cache.spi.RegionFactory]
+WARN main org.springframework.context.support.ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [testspring.xml]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.cache.spi.RegionFactory]
+WARN main net.sf.ehcache.config.ConfigurationFactory - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/zhougb/.gradle/caches/modules-2/files-2.1/net.sf.ehcache/ehcache/2.10.2/744b565432353cc7e20170debd4e2b30d3180477/ehcache-2.10.2.jar!/ehcache-failsafe.xml
+WARN main org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+WARN main org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - save person service id:1
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findByName list:1
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findById person1:com.zy.myeyes.beans.Person@336d72d0
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findById person2:com.zy.myeyes.beans.Person@336d72d0
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findById person3:com.zy.myeyes.beans.Person@336d72d0
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register before save User to DB
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register after save User to DB
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register end userName:zy password:123456
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - save product pid:2
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - get product by genericDao pid:1
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - get user by userDao uid:0
+WARN main net.sf.ehcache.config.ConfigurationFactory - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/zhougb/.gradle/caches/modules-2/files-2.1/net.sf.ehcache/ehcache/2.10.2/744b565432353cc7e20170debd4e2b30d3180477/ehcache-2.10.2.jar!/ehcache-failsafe.xml
+WARN main org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+WARN main net.sf.ehcache.DiskStorePathManager - diskStorePath 'C:\Users\zhougb\AppData\Local\Temp' is already used by an existing CacheManager either in the same VM or in a different process.
+The diskStore path for this CacheManager will be set to C:\Users\zhougb\AppData\Local\Temp\ehcache_auto_created385851078001497142diskstore.
+To avoid this warning consider using the CacheManager factory methods to create a singleton CacheManager or specifying a separate ehcache configuration (ehcache.xml) for each CacheManager instance.
+WARN main org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - save person service id:1
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findByName list:1
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findById person1:com.zy.myeyes.beans.Person@336d72d0
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findById person2:com.zy.myeyes.beans.Person@336d72d0
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findById person3:com.zy.myeyes.beans.Person@336d72d0
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register before save User to DB
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register after save User to DB
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register end userName:zy password:123456
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - save product pid:2
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - get product by genericDao pid:1
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - get user by userDao uid:0
+WARN main net.sf.ehcache.config.ConfigurationFactory - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/zhougb/.gradle/caches/modules-2/files-2.1/net.sf.ehcache/ehcache/2.10.2/744b565432353cc7e20170debd4e2b30d3180477/ehcache-2.10.2.jar!/ehcache-failsafe.xml
+WARN main org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+WARN main net.sf.ehcache.DiskStorePathManager - diskStorePath 'C:\Users\zhougb\AppData\Local\Temp' is already used by an existing CacheManager either in the same VM or in a different process.
+The diskStore path for this CacheManager will be set to C:\Users\zhougb\AppData\Local\Temp\ehcache_auto_created6002277763132837209diskstore.
+To avoid this warning consider using the CacheManager factory methods to create a singleton CacheManager or specifying a separate ehcache configuration (ehcache.xml) for each CacheManager instance.
+WARN main org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - save person service id:1
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findByName list:1
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findById person1:com.zy.myeyes.beans.Person@28ca4123
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findById person2:com.zy.myeyes.beans.Person@28ca4123
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findById person3:com.zy.myeyes.beans.Person@28ca4123
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register before save User to DB
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register after save User to DB
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register end userName:zy password:123456
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - save product pid:2
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - get product by genericDao pid:1
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - get user by userDao uid:0
+WARN main net.sf.ehcache.config.ConfigurationFactory - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/zhougb/.gradle/caches/modules-2/files-2.1/net.sf.ehcache/ehcache/2.10.2/744b565432353cc7e20170debd4e2b30d3180477/ehcache-2.10.2.jar!/ehcache-failsafe.xml
+WARN main org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+WARN main net.sf.ehcache.DiskStorePathManager - diskStorePath 'C:\Users\zhougb\AppData\Local\Temp' is already used by an existing CacheManager either in the same VM or in a different process.
+The diskStore path for this CacheManager will be set to C:\Users\zhougb\AppData\Local\Temp\ehcache_auto_created6137051845746489734diskstore.
+To avoid this warning consider using the CacheManager factory methods to create a singleton CacheManager or specifying a separate ehcache configuration (ehcache.xml) for each CacheManager instance.
+WARN main org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - save person service id:1
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findByName list:1
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findById person1:com.zy.myeyes.beans.Person@d2dbf4
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findById person2:com.zy.myeyes.beans.Person@d2dbf4
+DEBUG main com.zy.myeyes.service.impl.PersonServiceImpl - findById person3:com.zy.myeyes.beans.Person@d2dbf4
+DEBUG main com.zy.myeyes.service.impl.UserServiceImpl - register before save User to DB
