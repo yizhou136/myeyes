@@ -5,6 +5,11 @@ import org.apache.commons.logging.LogFactory;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.aop.aspectj.AspectJExpressionPointcut;
+import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
+import org.springframework.aop.target.HotSwappableTargetSource;
+import org.springframework.aop.target.SingletonTargetSource;
 import org.springframework.stereotype.Component;
 
 /**
@@ -39,5 +44,33 @@ public class SleepAspectJ {
         }
         System.out.println("after hulu");
         logger.debug("after hulu");
+    }
+
+    public static void main(String args[]){
+        Human human1 = new Human(1);
+        Human human2 = new Human(2);
+        /*AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
+        pointcut.setExpression("execution(* com.zy.myeyes.test.commons..*.sleep(..)))");
+        SleepHelper  sleepAdvice = new SleepHelper();
+        DefaultPointcutAdvisor defaultPointcutAdvisor = new DefaultPointcutAdvisor(pointcut, sleepAdvice);
+        ProxyFactory proxyFactory = new ProxyFactory();
+        proxyFactory.setTarget(human);
+        proxyFactory.addAdvisor(defaultPointcutAdvisor);
+        Sleepable sleepable = (Sleepable) proxyFactory.getProxy();
+        sleepable.sleep();*/
+
+
+
+        //SingletonTargetSource singletonTargetSource = new SingletonTargetSource(human1);
+        HotSwappableTargetSource targetSource = new HotSwappableTargetSource(human1);
+        Human proxy = (Human) ProxyFactory.getProxy(targetSource);
+        System.out.println(proxy.getClass().getName());
+        proxy.sleep();
+
+        targetSource.swap(human2);
+        //human1.setAge(3);
+        proxy.sleep();
+        //singletonTargetSource.releaseTarget();
+
     }
 }

@@ -1,19 +1,26 @@
 package com.zy.myeyes.beans;
 
-import javax.persistence.Column;
+
+
+import org.hibernate.annotations.*;
+
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Created by zhougb on 2016/5/10.
  */
 @Entity
-public class Person {
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+public class Person implements Serializable{
     private long id;
     private String name;
+    private int    age;
+    private String address;
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     public long getId() {
         return id;
     }
@@ -29,5 +36,23 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Column
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Column(length = 40)
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

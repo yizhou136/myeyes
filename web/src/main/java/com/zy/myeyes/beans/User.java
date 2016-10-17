@@ -1,8 +1,15 @@
 package com.zy.myeyes.beans;
 
-import javax.persistence.Id;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
-public class User {
+import javax.persistence.Id;
+import javax.servlet.http.HttpSessionBindingEvent;
+import javax.servlet.http.HttpSessionBindingListener;
+
+public class User implements HttpSessionBindingListener{
+	private final Log log = LogFactory.getLog(User.class);
+
 	@Id
 	private long uid;
 
@@ -39,5 +46,15 @@ public class User {
 		StringBuilder sb = new StringBuilder();
 		sb.append("uid:").append(getUid()).append(" age:").append(getAge()).append(" username:").append(getName());
 		return sb.toString();
+	}
+
+	@Override
+	public void valueBound(HttpSessionBindingEvent event) {
+		log.info("valueBound event:"+event.getName());
+	}
+
+	@Override
+	public void valueUnbound(HttpSessionBindingEvent event) {
+		log.info("valueUnbound event:"+event.getName());
 	}
 }

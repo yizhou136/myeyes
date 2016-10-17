@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.zy.myeyes.test.java.TypesTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-07-21T03:41:40" hostname="liuhf-top" time="0.007">
+  <properties/>
+  <testcase name="main" classname="com.zy.myeyes.test.java.TypesTest" time="0.007"/>
+  <system-out><![CDATA[a Map<String, Integer> 推导擦除后类型信息：
+	java.util.Map<java.lang.String, java.lang.Integer>
+		泛型个数：2==>class java.lang.String, class java.lang.Integer, 
+
+b Inner<Float, Double> 推导擦除后类型信息：
+	com.zy.myeyes.test.java.TypesTest.com.zy.myeyes.test.java.TypesTest$Inner<java.lang.Float, java.lang.Double>
+		泛型个数：2==>class java.lang.Float, class java.lang.Double, 
+
+c List<Set<String>[][]> 推导擦除后类型信息：
+	java.util.List<java.util.Set<java.lang.String>[][]>
+		泛型个数：1==>java.util.Set<java.lang.String>[][], 
+
+d List<String> 推导擦除后类型信息：
+	java.util.List<java.lang.String>
+		泛型个数：1==>class java.lang.String, 
+
+e Set<String> 推导擦除后类型信息：
+	java.util.Set<java.lang.String>
+		泛型个数：1==>class java.lang.String, 
+
+f Outer<String>.Inner 推导擦除后类型信息：
+	com.zy.myeyes.test.java.TypesTest.com.zy.myeyes.test.java.TypesTest$Outer<java.lang.String>.Inner
+		泛型个数：0==>
+
+c List<Set<String>[][]> List第二层Set的泛型推导信息：java.util.Set<java.lang.String>[][]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

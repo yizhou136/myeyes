@@ -1,0 +1,51 @@
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product` (
+  `pid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `type` int(2) unsigned NOT NULL,
+  `product_desc` varchar(100) NOT NULL,
+  `product_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`pid`)
+);
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `name` varchar(20) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `uid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`uid`)
+);
+
+
+
+INSERT INTO `product` VALUES ('1', '32', 'asdfasdf', 'afasdfa');
+INSERT INTO `product` VALUES ('2', '32', 'asdfasdf', 'afasdfa');
+INSERT INTO `product` VALUES ('3', '32', 'asdfasdf', 'afasdfa');
+INSERT INTO `product` VALUES ('8', '32', 'asdfasdf', 'afasdfa');
+INSERT INTO `product` VALUES ('9', '32', 'asdfasdf', 'afasdfa');
+
+
+INSERT INTO `user` VALUES ('zy', '12', '1');
+INSERT INTO `user` VALUES ('zy', '12', '3');
+INSERT INTO `user` VALUES ('afasdf', '12', '4');
+INSERT INTO `user` VALUES ('zy', '12', '5');
+INSERT INTO `user` VALUES ('zy', '12', '6');
+INSERT INTO `user` VALUES ('zy', '12', '7');
+INSERT INTO `user` VALUES ('zy', '12', '8');
+INSERT INTO `user` VALUES ('zy', '12', '9');
+INSERT INTO `user` VALUES ('zy', '12', '10');
+INSERT INTO `user` VALUES ('zy', '12', '11');
+INSERT INTO `user` VALUES ('zy', '12', '12');
+INSERT INTO `user` VALUES ('zy', '12', '13');
+INSERT INTO `user` VALUES ('zy', '12', '14');
+INSERT INTO `user` VALUES ('zy', '12', '15');
+INSERT INTO `user` VALUES ('zy', '12', '16');
+INSERT INTO `user` VALUES ('zy', '12', '17');
+INSERT INTO `user` VALUES ('zy', '12', '18');
+INSERT INTO `user` VALUES ('zy', '12', '19');
+INSERT INTO `user` VALUES ('zy', '12', '20');
+INSERT INTO `user` VALUES ('zy', '12', '21');
+INSERT INTO `user` VALUES ('zy', '12', '24');
+INSERT INTO `user` VALUES ('zy', '12', '25');
+INSERT INTO `user` VALUES ('zy', '12', '26');
+INSERT INTO `user` VALUES ('zy', '12', '31');
+INSERT INTO `user` VALUES ('zy', '12', '32');

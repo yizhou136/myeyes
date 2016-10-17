@@ -9,13 +9,29 @@ import org.springframework.stereotype.Component;
 
 //@Component
 public class Human implements Sleepable {
+    private int age;
+
+    public Human(){}
+
+    public Human(int age){
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     @Override
     public void sleep() {
-        System.out.println("睡觉了！梦中自有颜如玉！");
+        System.out.println("睡觉了！梦中自有颜如玉！"+age);
     }
 
     @Override
     public void hulu() {
-        System.out.println("打呼噜了");
+        System.out.println("打呼噜了"+age);
     }
 }

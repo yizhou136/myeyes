@@ -8,4 +8,6 @@ import com.zy.myeyes.beans.Person;
 public interface PersonService {
 
     void save(Person person);
+
+    Person findById(long id);
 }
